@@ -15,9 +15,9 @@ const korean = () => {
   ];
 
   return (
-    <div>
+    <>
       <Conmon foodList={foodList} />
-    </div>
+    </>
   );
 };
 

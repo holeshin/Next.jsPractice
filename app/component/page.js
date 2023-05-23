@@ -1,4 +1,5 @@
 "use client";
+import './Conmon.scss';
 import Link from "next/link";
 import { useState } from "react";
 
@@ -25,52 +26,36 @@ const Conmon = ({ foodList }) => {
   }
 
   return (
-    <div className="com">
+    <div className="conmon">
       <div
-        style={{ width: "100%", height: "420px", border: "1px solid white" }}
+        className='conmonWrap' 
       >
-        <div style={{ width: "100%", height: "80%" }}>
+        <div className='initialStateWrap'>
           {spiner ? (
-            <div
-              style={{
-                height: "100%",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                fontSize: "30px",
-              }}
-            >
-              {number <= 0 ? "골라주세요!" : "고르는 중입니다."}
+            <div className='initialState'>
+             {number <= 0 ? <p>눌러주세요!</p> :<div className='spinner'></div>}
             </div>
           ) : (
-            <div style={{ height: "100%" }}>
+            <div className='selectFoodWrap'>
               <div
-                style={{
-                  height: "80%",
-                }}
+              className="foodImg"
               >
                 {food.img}
               </div>
-              <p style={{ textAlign: "center", fontSize: "20px" }}>
+              <p className='foodTitle'>
                 {food.name}
               </p>
             </div>
           )}
         </div>
-        <button
-          style={{
-            width: "100%",
-            height: "20%",
-            fontSize: "30px",
-            fontWeight: "bold",
-          }}
+        <button className='foodselectButton'
           onClick={onClickFoodChange}
         >
           선택
         </button>
       </div>
-      {number>0&&<div style={{marginTop:"10px",fontSize:"25px"}}>누른 횟수:{number}</div>}
-      <button style={{marginTop:"13px", width:"50%"}}>
+      {number>0&&<div className='selectNumberButton'>누른 횟수:{number}</div>}
+      <button className='moveMainPageButton'>
         <Link  href={{
               pathname: "/",
             }}>처음으로</Link>

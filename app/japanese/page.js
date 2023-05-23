@@ -2,9 +2,9 @@ import Conmon from "../component/page";
 
 const japanese = () => {
   return (
-    <div>
+    <>
       <Conmon />
-    </div>
+    </>
   );
 };
 
