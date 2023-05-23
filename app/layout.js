@@ -1,5 +1,4 @@
 import "./globals.css";
-import Link from "next/link";
 
 export const metadata = {
   title: "Next.js 연습",
@@ -8,8 +7,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="ko">
+      <body>
+        <h1 className="title">오늘 점심 머먹?</h1>
+        {children}
+        <div className="title-sub">by hole shin</div>
+      </body>
     </html>
   );
 }
