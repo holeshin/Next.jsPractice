@@ -1,31 +1,36 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 
 const Conmon = ({ foodList }) => {
   const [food, setFood] = useState([]);
+  const [number, setNumber] = useState(0);
+  const [spiner, setSpiner] = useState(true);
 
   const onClickFoodChange = () => {
+    fdd();
     setTimeout(() => {
       setFood(foodList[Math.floor(Math.random() * foodList.length)]);
-    }, 1000);
+      setSpiner(false)
+    }, 2000);
+    changeSpiner();
   };
 
+  const changeSpiner=()=>{
+    setSpiner(true)
+  }
+
+  const fdd =()=>{
+    setNumber(number+1);
+  }
+
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-        gap: "50px",
-        margin: "30px 0",
-      }}
-    >
+    <div className="com">
       <div
-        style={{ width: "600px", height: "420px", border: "1px solid white" }}
+        style={{ width: "100%", height: "420px", border: "1px solid white" }}
       >
         <div style={{ width: "100%", height: "80%" }}>
-          {!food.name ? (
+          {spiner ? (
             <div
               style={{
                 height: "100%",
@@ -35,7 +40,7 @@ const Conmon = ({ foodList }) => {
                 fontSize: "30px",
               }}
             >
-              골라주세요!
+              {number <= 0 ? "골라주세요!" : "고르는 중입니다."}
             </div>
           ) : (
             <div style={{ height: "100%" }}>
@@ -64,6 +69,12 @@ const Conmon = ({ foodList }) => {
           선택
         </button>
       </div>
+      {number>0&&<div style={{marginTop:"10px",fontSize:"25px"}}>누른 횟수:{number}</div>}
+      <button style={{marginTop:"13px", width:"50%"}}>
+        <Link  href={{
+              pathname: "/",
+            }}>처음으로</Link>
+        </button>
     </div>
   );
 };

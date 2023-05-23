@@ -6,14 +6,22 @@ body {
 
 .title {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 40px;
 }
 .main {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 30px 300px;
+  margin: 30px;
+  font-size: 30px;
+}
+.com{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 30px;
   font-size: 30px;
 }
 .category {
@@ -40,6 +48,7 @@ body {
   cursor: pointer;
 }
 .title-sub {
+  margin-top: 25px;
   text-align: center;
 }
 
