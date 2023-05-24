@@ -42,7 +42,7 @@ const Conmon = ({ foodList }) => {
             </div>
           ) : (
             <div className="selectFoodWrap">
-              <div className="foodImg">{food.img}</div>
+              <img className="foodImg" src={food.src} alt="양식" />
               <p className="foodTitle">{food.name}</p>
             </div>
           )}
