@@ -7,12 +7,15 @@ const Conmon = ({ foodList }) => {
   const [food, setFood] = useState([]);
   const [number, setNumber] = useState(0);
   const [spiner, setSpiner] = useState(true);
+  const [useBtn,setUseBtn] = useState(false)
 
   const onClickFoodChange = () => {
-    fdd();
+    clickNumber();
+    setUseBtn(true);
     setTimeout(() => {
       setFood(foodList[Math.floor(Math.random() * foodList.length)]);
       setSpiner(false)
+      setUseBtn(false)
     }, 2000);
     changeSpiner();
   };
@@ -21,9 +24,10 @@ const Conmon = ({ foodList }) => {
     setSpiner(true)
   }
 
-  const fdd =()=>{
+  const clickNumber =()=>{
     setNumber(number+1);
   }
+
 
   return (
     <div className="conmon">
@@ -49,7 +53,7 @@ const Conmon = ({ foodList }) => {
           )}
         </div>
         <button className='foodselectButton'
-          onClick={onClickFoodChange}
+          onClick={onClickFoodChange} disabled={useBtn}
         >
           선택
         </button>
