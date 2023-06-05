@@ -14,7 +14,7 @@ const korean = () => {
     { name: "라면" },
     { name: "떡튀순" },
   ];
-
+  
   return (
     <>
       <Conmon foodList={foodList} />
