@@ -41,8 +41,7 @@ const Conmon = ({ foodList }) => {
               )}
             </div>
           ) : (
-            <div className="selectFoodWrap">
-              <img className="foodImg" src={food.src} alt="양식" />
+            <div className="initialState">
               <p className="foodTitle">{food.name}</p>
             </div>
           )}
@@ -55,6 +54,7 @@ const Conmon = ({ foodList }) => {
           선택
         </button>
       </div>
+      
       {number > 0 && (
         <div className="selectNumberButton">누른 횟수:{number}</div>
       )}
