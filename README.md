@@ -12,3 +12,4 @@ yarn dev
 # or
 pnpm dev
 ```
+모바일 버전 https://cerulean-duckanoo-93eb89.netlify.app/
